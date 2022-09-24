@@ -10,7 +10,104 @@
   padding: 0;
 }
 
+body {
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+  background-color: white;
+  background-image: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
+  background-repeat: no-repeat;
+}
+
+.header {
+  padding-top: 1.9375rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.logo {
+  width: 100px;
+  max-width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.main__content {
+  padding: 0 2rem 5.75rem;
+  color: hsl(0deg, 36%, 70%);
+}
+
+.main__title {
+  font-size: 2.5rem;
+  line-height: 1.05;
+  font-weight: 300;
+  letter-spacing: 10.8254px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
+.main__title strong {
+  font-weight: 600;
+  color: hsl(0deg, 6%, 24%);
+}
+
+.main__paragraph {
+  font-size: 0.875rem;
+  line-height: 1.5714285714;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2.2857142857em;
+}
+
+.main__input-wrap {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid hsla(0deg, 36%, 70%, 0.5);
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.email-input {
+  border: 0;
+  background-color: transparent;
+  margin-left: 1.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  color: hsl(0deg, 7%, 24%);
+}
+.email-input:focus {
+  outline: 0;
+}
+.email-input::placeholder {
+  color: hsla(0deg, 36%, 70%, 0.5);
+  font-size: 0.875rem;
+  line-height: 2;
+  font-weight: 400;
+}
+
+.input__submit-btn {
+  min-width: 4rem;
+  height: 3rem;
+  border-radius: 28px;
+  display: block;
+  border: 0;
+  background-color: transparent;
+  background-image: linear-gradient(135deg, hsl(0deg, 80%, 86%), hsl(0deg, 74%, 74%));
+  cursor: pointer;
+  box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+}
+
 .attribution {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  translate: -50%;
+  z-index: -1;
   font-size: 11px;
   text-align: center;
 }

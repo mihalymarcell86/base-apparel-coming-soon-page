@@ -12,10 +12,40 @@
 
 body {
   font-family: "Josefin Sans", sans-serif;
+  font-size: 0;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
   background-color: white;
   background-image: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
   background-repeat: no-repeat;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main {
+  max-width: 500px;
+  margin-inline: auto;
+}
+@media (min-width: 1000px) {
+  .main {
+    max-width: none;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr max-content;
+    grid-template-areas: "header hero" "main-content hero";
+    padding-left: min(165px, 0.2840909091 * 100vw + -244.0909090909px);
+    column-gap: min(220px, 0.4090909091 * 100vw + -369.0909090909px);
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-size: max(550px, 0.6363636364 * 100vw + -86.3636363636px) 100%;
+  }
+}
+@media (min-width: 1441px) {
+  .main {
+    background-size: calc(100vw - 610px) 100%;
+  }
 }
 
 .header {
@@ -23,21 +53,62 @@ body {
   padding-bottom: 2rem;
   padding-left: 2rem;
 }
-
-.logo {
-  width: 100px;
-  max-width: 100%;
+@media (min-width: 1000px) {
+  .header {
+    grid-area: header;
+    padding-top: 4.6875rem;
+    padding-left: 0;
+  }
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+.logo {
+  width: 6.25rem;
+}
+@media (min-width: 1000px) {
+  .logo {
+    width: 9.875rem;
+  }
+}
+
+.header__picture {
+  grid-area: hero;
+}
+
+.header__hero-img {
+  margin-bottom: 4rem;
+}
+@media (min-width: 1000px) {
+  .header__hero-img {
+    margin: 0;
+  }
+}
+
+.header__hero-img {
+  width: 100%;
+  height: clamp(250px, 1.3513513514 * 100vw + -258.1081081081px, 350px);
+  object-fit: cover;
+  object-position: top;
+}
+@media (min-width: 1000px) {
+  .header__hero-img {
+    height: auto;
+    width: min(610px, 0.3636363636 * 100vw + 86.3636363636px);
+  }
 }
 
 .main__content {
   padding: 0 2rem 5.75rem;
   color: hsl(0deg, 36%, 70%);
+}
+@media (min-width: 1000px) {
+  .main__content {
+    grid-area: main-content;
+    padding: 0;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: min(152px, 0.2886363636 * 100vw + -263.6363636364px);
+    max-width: 27.8125rem;
+  }
 }
 
 .main__title {
@@ -53,6 +124,15 @@ body {
   font-weight: 600;
   color: hsl(0deg, 6%, 24%);
 }
+@media (min-width: 1000px) {
+  .main__title {
+    font-size: 4rem;
+    line-height: 1;
+    text-align: left;
+    letter-spacing: 17.3206px;
+    margin-bottom: 0.5em;
+  }
+}
 
 .main__paragraph {
   font-size: 0.875rem;
@@ -60,6 +140,14 @@ body {
   font-weight: 400;
   text-align: center;
   margin-bottom: 2.2857142857em;
+}
+@media (min-width: 1000px) {
+  .main__paragraph {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 2.5em;
+  }
 }
 
 .main__input-wrap {
@@ -71,6 +159,11 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 1000px) {
+  .main__input-wrap {
+    height: 3.5rem;
+  }
+}
 
 .email-input {
   border: 0;
@@ -79,15 +172,20 @@ body {
   font-family: "Josefin Sans", sans-serif;
   width: 100%;
   color: hsl(0deg, 7%, 24%);
+  font-size: 0.875rem;
+  line-height: 2;
+  font-weight: 400;
 }
 .email-input:focus {
   outline: 0;
 }
 .email-input::placeholder {
   color: hsla(0deg, 36%, 70%, 0.5);
-  font-size: 0.875rem;
-  line-height: 2;
-  font-weight: 400;
+}
+@media (min-width: 1000px) {
+  .email-input {
+    font-size: 1rem;
+  }
 }
 
 .input__submit-btn {
@@ -101,15 +199,31 @@ body {
   cursor: pointer;
   box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
 }
+@media (min-width: 1000px) {
+  .input__submit-btn {
+    min-width: 6.25rem;
+    height: 3.5rem;
+  }
+}
 
-.attribution {
+.footer {
   position: absolute;
-  bottom: 1em;
+  bottom: 0;
   left: 50%;
   translate: -50%;
   z-index: -1;
+}
+@media (min-width: 1000px) {
+  .footer {
+    left: 0;
+    translate: none;
+  }
+}
+
+.attribution {
   font-size: 11px;
   text-align: center;
+  margin-bottom: 1em;
 }
 
 .attribution a {

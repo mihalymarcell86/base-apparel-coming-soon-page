@@ -21,11 +21,14 @@
     <title>Frontend Mentor | Base Apparel coming soon page</title>
   </head>
   <body>
-    <header class="header">
-      <img src="./images/logo.svg" alt="Base Apparel Logo" class="logo" />
-    </header>
     <main class="main">
-      <img src="./images/hero-mobile.jpg" />
+      <header class="header">
+        <img src="./images/logo.svg" alt="Base Apparel Logo" class="logo" />
+      </header>
+      <picture class="header__picture">
+        <source media="(min-width: 376px)" srcset="./images/hero-desktop.jpg" />
+        <img src="./images/hero-mobile.jpg" class="header__hero-img" />
+      </picture>
       <div class="main__content">
         <h1 class="main__title">We're <strong>coming soon</strong></h1>
         <p class="main__paragraph">
@@ -38,22 +41,25 @@
             type="email"
             placeholder="Email Address"
             class="email-input"
+            required
           /><button type="submit" class="input__submit-btn">
             <img src="./images/icon-arrow.svg" alt="submit" />
           </button>
         </form>
+        <div class="footer" hidden>
+          <p class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by
+            <a href="https://www.github.com/mihalymarcell86" target="_blank"
+              >Marcell Mihály</a
+            >.
+          </p>
+        </div>
       </div>
     </main>
-    <footer>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by
-        <a href="https://www.github.com/mihalymarcell86" target="_blank"
-          >Marcell Mihály</a
-        >.
-      </p>
-    </footer>
   </body>
 </html>

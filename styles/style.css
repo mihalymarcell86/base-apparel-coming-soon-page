@@ -31,7 +31,7 @@ img {
 }
 @media (min-width: 1000px) {
   .main {
-    max-width: none;
+    max-width: 1440px;
     display: grid;
     grid-template-rows: min-content 1fr;
     grid-template-columns: 1fr max-content;
@@ -40,11 +40,6 @@ img {
     column-gap: min(220px, 0.4090909091 * 100vw + -369.0909090909px);
     background-image: url("../images/bg-pattern-desktop.svg");
     background-size: max(550px, 0.6363636364 * 100vw + -86.3636363636px) 100%;
-  }
-}
-@media (min-width: 1441px) {
-  .main {
-    background-size: calc(100vw - 610px) 100%;
   }
 }
 
@@ -97,7 +92,7 @@ img {
 }
 
 .main__content {
-  padding: 0 2rem 5.75rem;
+  padding: 0 2rem 4.4375rem;
   color: hsl(0deg, 36%, 70%);
 }
 @media (min-width: 1000px) {
@@ -106,7 +101,7 @@ img {
     padding: 0;
     position: relative;
     margin-top: auto;
-    margin-bottom: min(152px, 0.2886363636 * 100vw + -263.6363636364px);
+    margin-bottom: min(130px, 0.2386363636 * 100vw + -213.6363636364px);
     max-width: 27.8125rem;
   }
 }
@@ -158,10 +153,12 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 1000px) {
   .main__input-wrap {
     height: 3.5rem;
+    margin-bottom: 0.25rem;
   }
 }
 
@@ -188,6 +185,26 @@ img {
   }
 }
 
+.input__error {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  display: none;
+}
+
+.input__error-message {
+  font-size: 0.8125rem;
+  line-height: 1;
+  margin-left: 1.5rem;
+  color: hsl(0deg, 93%, 68%);
+  visibility: hidden;
+}
+@media (min-width: 1000px) {
+  .input__error-message {
+    line-height: 28px;
+    margin-left: 2rem;
+  }
+}
+
 .input__submit-btn {
   min-width: 4rem;
   height: 3rem;
@@ -198,12 +215,21 @@ img {
   background-image: linear-gradient(135deg, hsl(0deg, 80%, 86%), hsl(0deg, 74%, 74%));
   cursor: pointer;
   box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+  transition: 0.2s ease;
+  position: relative;
+  left: 2px;
 }
 @media (min-width: 1000px) {
   .input__submit-btn {
     min-width: 6.25rem;
     height: 3.5rem;
   }
+}
+.input__submit-btn:focus {
+  outline: none;
+}
+.input__submit-btn:hover {
+  filter: opacity(50%);
 }
 
 .footer {

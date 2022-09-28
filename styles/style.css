@@ -51,7 +51,7 @@ img {
 @media (min-width: 1000px) {
   .header {
     grid-area: header;
-    padding-top: 4.6875rem;
+    padding-top: 4.0625rem;
     padding-left: 0;
   }
 }
